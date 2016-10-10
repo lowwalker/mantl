@@ -7,7 +7,6 @@ variable "ebs_volume_type" {default = "gp2"}
 variable "data_ebs_volume_size" {default = "20"} # size is in gigabytes
 variable "data_ebs_volume_type" {default = "gp2"}
 variable "role" {}
-variable "short_name" {default = "mantl"}
 variable "availability_zones" {}
 variable "ssh_key_pair" {}
 variable "datacenter" {}
@@ -15,7 +14,6 @@ variable "source_ami" {}
 variable "security_group_ids" {}
 variable "vpc_subnet_ids" {}
 variable "ssh_username" {default = "centos"}
-
 
 resource "aws_ebs_volume" "ebs" {
   availability_zone = "${element(split(",", var.availability_zones), count.index)}"

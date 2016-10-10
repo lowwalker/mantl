@@ -1,4 +1,3 @@
-variable "short_name" {default = "mantl"}
 
 resource "aws_iam_instance_profile" "worker_profile" {
   name = "${var.short_name}-worker-profile"
